@@ -1,8 +1,8 @@
-PROJECT_NAME = sheet
+PROJECT_NAME = cheatsheet
 
 CC = g++
 
-CPPFLAGS = -O3 -g -Wall -Wextra -Werror -Wpedantic -Wstrict-aliasing -static -static-libgcc -static-libstdc++
+CFLAGS = -O3 -g -Wall -Wextra -Werror -Wpedantic -Wstrict-aliasing -static -static-libgcc -static-libstdc++
 #CPPFLAGS += -Iinclude
 
 LDFLAGS += -lshlwapi #-mwindows
@@ -16,10 +16,10 @@ BIN = bin
 all: project
 
 run: all
-	$(BIN)/$(PROJECT_NAME)
+	$(BIN)/$(PROJECT_NAME) $(TITLE) $(TEAM) $(INPUT)
 
 project: $(OBJ)
-	$(CC) -o $(BIN)/$(PROJECT_NAME) $^ $(LDFLAGS)
+	$(CC) -o $(BIN)/$(PROJECT_NAME) $^ $(CFLAGS) $(LDFLAGS)
 
 clean:
 	del /S "src\*.o"

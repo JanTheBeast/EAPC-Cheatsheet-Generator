@@ -85,7 +85,7 @@ void read_file(char* buffer, const char* fileName)
     }
 
 #ifdef VERBOSE
-    printf("Read %d bytes from %s.\n", bytesRead, fileName);
+    printf("Read %ld bytes from %s.\n", bytesRead, fileName);
 #endif
 }
 
@@ -143,7 +143,7 @@ void write_file(char* buffer, const char* fileName)
     }
 
 #ifdef VERBOSE
-    printf("Wrote %d bytes to %s.\n", bytesWritten, fileName);
+    printf("Wrote %ld bytes to %s.\n", bytesWritten, fileName);
 #endif
 }
 
@@ -207,7 +207,7 @@ char* add_sections(const char* filePath, int depth)
 }
 
 int main(int argc, char* argv[])
-{
+{ 
     if(argc < 4)
     {
         char path[MAX_PATH];
@@ -223,7 +223,7 @@ int main(int argc, char* argv[])
             "output file"
         );
         printf(
-            "\nOr in the format: %s [%s] [%s]",
+            "\nOr in the format: %s [%s] [%s] [%s]",
             exe,
             "title",
             "team name",
